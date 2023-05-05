@@ -5,22 +5,13 @@
 <head>
 
 <meta charset="ISO-8859-1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="styles.css">
 <title>Insert title here</title>
 </head>
 <body>
 	<header>
-		<!-- nav. este fue creado para ofrecer ayuda en la navegacion. por tanto tenemos aca los botones de inicia, cotiza y quienes somos -->
-		<nav class="navbar">
-			<!-- div solo indica una division ene cp -->
-			<div><a id="logo" href="index.html">Cachureando</a></div>
-
-			<ul class="navbar-nav" style="display: flex;flex-direction: row;">
-				<!-- ul crea una lista y el li se usa para definir cada item de la lista -->
-			<a href="inicioServlet">Inicio</a> <br/>
-            <a href="contactoServlet">Contacto</a> <br/>
-            <a href="crearCapacitacionServlet">Crear capacitacion</a>
-			</ul>
-		</nav>
+		<%@ include file="/WEB-INF/includes/navbar.jsp" %>
 	</header>
 	<main>
 		<!-- el main contiene 3 secciones,  primera sction: el titulo de la seccion (h1), un boton y un estilo hero -->
@@ -85,10 +76,6 @@
 		</section>
 	</main>
 
-	<footer>
-		<!-- aca el footer que contiene la informacion de contactos ,integrantes y fecha.  -->
-		<br>Carolina Cerón Escobar | Loreto Galvez | César Mongez | Heinz Beckers <br> Proyecto Cachureando |
-		Enero-2023
-	</footer>
+<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
 </html>
