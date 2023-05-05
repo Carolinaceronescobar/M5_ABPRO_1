@@ -16,7 +16,7 @@
 
 			<ul class="navbar-nav" style="display: flex;flex-direction: row;">
 				<!-- ul crea una lista y el li se usa para definir cada item de la lista -->
-			<a href="inicioServlet">Inicio</a> <br/>
+			<a href="inicioServlet">Iniciooo</a> <br/>
             <a href="contactoServlet">Contacto</a> <br/>
             <a href="crearCapacitacionServlet">Crear capacitacion</a>
 			</ul>
