@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+    <display-name>M5-ABPRO</display-name>
+    <welcome-file-list>
+        <welcome-file>inicioServlet</welcome-file>
+    </welcome-file-list>
+    <servlet>
+        <description></description>
+        <display-name>InicioServlet</display-name>
+        <servlet-name>InicioServlet</servlet-name>
+        <servlet-class>InicioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>InicioServlet</servlet-name>
+        <url-pattern>/inicioServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>ContactoServlet</display-name>
+        <servlet-name>ContactoServlet</servlet-name>
+        <servlet-class>ContactoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ContactoServlet</servlet-name>
+        <url-pattern>/contactoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>CrearContactoServlet</display-name>
+        <servlet-name>CrearContactoServlet</servlet-name>
+        <servlet-class>CrearContactoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrearContactoServlet</servlet-name>
+        <url-pattern>/crearContactoServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <description></description>
+        <display-name>CrearCapacitacionServlet</display-name>
+        <servlet-name>CrearCapacitacionServlet</servlet-name>
+        <servlet-class>CrearCapacitacionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CrearCapacitacionServlet</servlet-name>
+        <url-pattern>/crearCapacitacionServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
