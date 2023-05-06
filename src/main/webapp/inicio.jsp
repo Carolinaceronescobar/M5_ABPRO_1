@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="styles.css">
 <title>Insert title here</title>
 </head>
+
 <body>
 	<header>
 		<%@ include file="/WEB-INF/includes/navbar.jsp" %>
