@@ -19,7 +19,7 @@ body > footer {
 }
 
 /* ------- NAVBAR ------- */
-.navbar {
+/*.navbar {
     display: flex;
     align-items: center;
     background-color: #fed302;
@@ -51,7 +51,7 @@ body > footer {
 #logo:visited {
     color: black;
     text-decoration: none;
-}
+}*/
 /* ------- HERO ------- */
 .hero {
     background-image: url(../img/hero-img.png);

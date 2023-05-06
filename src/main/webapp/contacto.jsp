@@ -8,21 +8,17 @@ Map<String, String> errores = (Map<String, String>)request.getAttribute("errores
 <head>
     <meta charset="UTF-8">
     <title>Formulario de usuarios</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="contacto.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+     <link rel="stylesheet" type="text/css" href="styles.css">
+
 </head>
 <body>
     <header>
-      <nav class="navbar">
-        <img src="img/logo.png" width="100px" height="100px" position="left">
-        <div id="logo"><a href="index.html">Apoyando a las pymes</a></div>
+<%@ include file="/WEB-INF/includes/navbar.jsp" %>
 
-        <ul class="navbar-nav">
-          <a href="inicioServlet">Inicio</a> <br/>
-          <a href="contactoServlet">Contacto</a> <br/>
-          <a href="crearCapacitacionServlet">Crear capacitacion</a>
-        </ul>
-      </nav>
+
+
     </header>
   <form action="validacion.js" method="POST" id="contacto-frm" name="contacto_frm">
     <fieldset>
@@ -66,7 +62,7 @@ Map<String, String> errores = (Map<String, String>)request.getAttribute("errores
       </div>
     </fieldset>
   </form>
-  <footer>Carolina Cerón Escobar | Proyecto Hoy Empresas | Enero-2023
-  </footer>
-</body>
+<%@ include file="/WEB-INF/includes/footer.jsp" %>
+
+  </body>
 </html>
