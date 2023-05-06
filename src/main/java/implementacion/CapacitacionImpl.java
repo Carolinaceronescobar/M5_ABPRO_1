@@ -20,14 +20,11 @@ public class CapacitacionImpl implements CapacitacionInterface {
 
         return capacitaciones;
     }
-    public void almacenarCapacitacion(Capacitacion c) {
-        // Crear nueva instancia de Capacitacion y desplegar sus datos por consola
-        Capacitacion capacitacionNueva = new Capacitacion(c.getNombre(), c.getDescripcion(), c.getFecha(), c.getHora());
-        System.out.println("Nueva capacitación creada:");
-        System.out.println(capacitacionNueva);
-    }
+
     public void almacenarCapacitacion(Capacitacion c){
         capacitaciones.add(c);
+        System.out.println("Nueva capacitación creada:");
+        c.toString();
     }
 
 
