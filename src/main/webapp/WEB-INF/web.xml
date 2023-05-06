@@ -6,22 +6,22 @@
     </welcome-file-list>
     <servlet>
         <description></description>
-        <display-name>InicioServlet</display-name>
-        <servlet-name>InicioServlet</servlet-name>
-        <servlet-class>InicioServlet</servlet-class>
+        <display-name>controlador.InicioServlet</display-name>
+        <servlet-name>controlador.InicioServlet</servlet-name>
+        <servlet-class>controlador.InicioServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>InicioServlet</servlet-name>
+        <servlet-name>controlador.InicioServlet</servlet-name>
         <url-pattern>/inicioServlet</url-pattern>
     </servlet-mapping>
     <servlet>
         <description></description>
-        <display-name>ContactoServlet</display-name>
-        <servlet-name>ContactoServlet</servlet-name>
-        <servlet-class>ContactoServlet</servlet-class>
+        <display-name>controlador.ContactoServlet</display-name>
+        <servlet-name>controlador.ContactoServlet</servlet-name>
+        <servlet-class>controlador.ContactoServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ContactoServlet</servlet-name>
+        <servlet-name>controlador.ContactoServlet</servlet-name>
         <url-pattern>/contactoServlet</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -36,12 +36,12 @@
     </servlet-mapping>
     <servlet>
         <description></description>
-        <display-name>CrearCapacitacionServlet</display-name>
-        <servlet-name>CrearCapacitacionServlet</servlet-name>
-        <servlet-class>CrearCapacitacionServlet</servlet-class>
+        <display-name>controlador.CrearCapacitacionServlet</display-name>
+        <servlet-name>controlador.CrearCapacitacionServlet</servlet-name>
+        <servlet-class>controlador.CrearCapacitacionServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>CrearCapacitacionServlet</servlet-name>
+        <servlet-name>controlador.CrearCapacitacionServlet</servlet-name>
         <url-pattern>/crearCapacitacionServlet</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -53,5 +53,15 @@
     <servlet-mapping>
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
+
+    <servlet>
+        <description></description>
+        <display-name>controlador.CrearUsuarioServlet</display-name>
+        <servlet-name>controlador.CrearUsuarioServlet</servlet-name>
+        <servlet-class>controlador.CrearUsuarioServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controlador.CrearUsuarioServlet</servlet-name>
+        <url-pattern>/crearUsuarioServlet</url-pattern>
     </servlet-mapping>
 </web-app>

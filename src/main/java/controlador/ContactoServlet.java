@@ -1,3 +1,5 @@
+package controlador;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -8,7 +10,7 @@ import java.io.IOException;
 import java.io.Serial;
 
 /**
- * Servlet implementation class ContactoServlet
+ * Servlet implementation class controlador.ContactoServlet
  */
 public class ContactoServlet extends HttpServlet {
 	@Serial

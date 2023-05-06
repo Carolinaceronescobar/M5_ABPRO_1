@@ -1,22 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
+    <meta charset="ISO-8859-1" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
 
-<meta charset="ISO-8859-1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <%@ include file="/WEB-INF/includes/navbar.jsp" %>
 
-        <link rel="stylesheet" type="text/css" href="styles.css">
-<title>Insert title here</title>
-</head>
-<body>
-<%@ include file="/WEB-INF/includes/navbar.jsp" %>
-
-<div class="container-fluid">
+    <div class="container-fluid">
       <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Id:</label>
+          <label for="exampleInputEmail1" class="form-label">Nombre:</label>
           <input
             name="nombre"
             type="text"
@@ -52,9 +56,6 @@
       </form>
     </div>
 
-<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
-</body>
-
-
+    <%@ include file="/WEB-INF/includes/footer.jsp" %>
+  </body>
 </html>
