@@ -1,21 +1,23 @@
-import java.io.IOException;
+package controlador;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
- * Servlet implementation class InicioServlet
+ * Servlet implementation class CapacitacionCrearServlet
  */
-public class InicioServlet extends HttpServlet {
+public class CrearCapacitacionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public InicioServlet() {
+    public CrearCapacitacionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -24,7 +26,7 @@ public class InicioServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/inicio.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("crearCapacitacionFormulario.jsp");
         dispatcher.forward(request, response);
 	}
 
@@ -32,7 +34,7 @@ public class InicioServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 	}
 
 }

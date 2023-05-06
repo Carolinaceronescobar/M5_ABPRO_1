@@ -19,6 +19,9 @@
             <li class="nav-item">
               <a class="nav-link" href="crearCapacitacionServlet">Crear capacitacion</a>
             </li>
+            <li class="nav-item">
+                          <a class="nav-link" href="crearUsuarioServlet">Crear usuario</a>
+                        </li>
 
           </ul>
         </div>
