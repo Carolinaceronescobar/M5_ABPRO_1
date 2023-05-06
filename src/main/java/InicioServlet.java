@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class InicioServlet
  */
+
 public class InicioServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
