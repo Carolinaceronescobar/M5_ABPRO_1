@@ -55,4 +55,15 @@
         <servlet-name>controlador.CrearUsuarioServlet</servlet-name>
         <url-pattern>/crearUsuarioServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <description></description>
+        <display-name>ListarCapacitaciones</display-name>
+        <servlet-name>ListarCapacitaciones</servlet-name>
+        <servlet-class>controlador.ListarCapacitaciones</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ListarCapacitaciones</servlet-name>
+        <url-pattern>/listarCapac</url-pattern>
+    </servlet-mapping>
 </web-app>
