@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,5 +14,7 @@
         <input type="password" id="contrasena" name="contrasena"><br><br>
         <input type="submit" value="Iniciar sesión">
     </form>
+
+<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
 </html>

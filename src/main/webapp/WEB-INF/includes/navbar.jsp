@@ -3,7 +3,7 @@
 
 
         <img src="img/logo.png" width="100px" height="100px" position="left">
-                <div id="logo"><a href="inicioServlet">Apoyando a las pymes</a></div>
+                <div id="logo"><a href="inicioServlet">Sprint Modulo 5 </a></div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -22,7 +22,9 @@
             <li class="nav-item">
                           <a class="nav-link" href="crearUsuarioServlet">Crear usuario</a>
                         </li>
-
+            <li class="nav-item">
+                          <a class="nav-link" href="loginServlet">Login</a>
+                        </li>
           </ul>
         </div>
       </div>

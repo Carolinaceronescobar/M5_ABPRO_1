@@ -14,7 +14,8 @@ public class LoginImpl {
         ResultSet rs = conexion.ejecutarConsulta("SELECT nombre_usuario FROM usuarios");
 
         while (rs.next()) {
-            String nombreUsuario = rs.getString("nombre_usuario");
+            String nombreUsuario;
+            nombreUsuario = rs.getString("nombre_usuario");
             System.out.println(nombreUsuario);
         }
 

@@ -44,15 +44,6 @@
         <servlet-name>controlador.CrearCapacitacionServlet</servlet-name>
         <url-pattern>/crearCapacitacionServlet</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <description></description>
-        <display-name>controlador.LoginServlet</display-name>
-        <servlet-name>controlador.LoginServlet</servlet-name>
-        <servlet-class>controlador.LoginServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>controlador.LoginServlet</servlet-name>
-        <url-pattern>/login</url-pattern>
 
     <servlet>
         <description></description>
@@ -64,4 +55,15 @@
         <servlet-name>controlador.CrearUsuarioServlet</servlet-name>
         <url-pattern>/crearUsuarioServlet</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <description></description>
+        <display-name>controlador.LoginServlet</display-name>
+        <servlet-name>controlador.LoginServlet</servlet-name>
+        <servlet-class>controlador.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controlador.LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>

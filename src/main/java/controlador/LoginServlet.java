@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                 out.println("</html>");
             }
         } else {
-            getServletContext().getRequestDispatcher("/login.html").forward(req, resp);
+            getServletContext().getRequestDispatcher("/loginServlet").forward(req, resp);
         }
     }
 
