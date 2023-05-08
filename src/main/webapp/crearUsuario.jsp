@@ -17,8 +17,9 @@ pageEncoding="ISO-8859-1"%>
   <body>
     <%@ include file="/WEB-INF/includes/navbar.jsp" %>
 
-    <div class="container-fluid">
-      <form>
+    <div class="container">
+          <h1 class="text-center my-2">Crear capacitación</h1>
+            <form class="card p-4" >
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Nombre:</label>
           <input
