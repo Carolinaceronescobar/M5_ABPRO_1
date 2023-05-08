@@ -46,12 +46,12 @@
     </servlet-mapping>
     <servlet>
         <description></description>
-        <display-name>LoginServlet</display-name>
-        <servlet-name>LoginServlet</servlet-name>
-        <servlet-class>LoginServlet</servlet-class>
+        <display-name>controlador.LoginServlet</display-name>
+        <servlet-name>controlador.LoginServlet</servlet-name>
+        <servlet-class>controlador.LoginServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
+        <servlet-name>controlador.LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
 
     <servlet>
