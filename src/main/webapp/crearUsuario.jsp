@@ -53,7 +53,7 @@ pageEncoding="ISO-8859-1"%>
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Crear</button>
+        <button type="submit" class="btn btn-primary HOLA">Crear</button>
       </form>
     </div>
 
