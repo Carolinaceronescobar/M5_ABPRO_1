@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="modelo.Capacitacion"%>
+<%
+List<Capacitacion> capacitaciones = (List<Capacitacion>)request.getAttribute("capacitaciones");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,30 +30,17 @@
 		    </tr>
 		  </thead>		
 		  <tbody>
-		    <tr>
-		      <td>1111111-1</td>
-		      <td>01/01/2023</td>
-		      <td>13:20</td>
-		      <td>Valparaíso</td>
-		      <td>12 hrs</td>
-		      <td>10</td>
-		    </tr>
-		    <tr>
-		      <td>2222222-2</td>
-		      <td>14/02/2023</td>
-		      <td>11:20</td>
-		      <td>Santiago</td>
-		      <td>10</td>
-		      <td>5</td>
-		    </tr>
-		    <tr>
-		      <td>8888888-5</td>
-		      <td>22/03/2023</td>
-		      <td>17:35</td>
-		      <td>Pucón</td>
-		      <td>55</td>
-		      <td>10</td>
-		    </tr>
+		          <% for (Capacitacion listCapacitacion : capacitaciones) {%>
+                      <tr>
+                          <td><%=listCapacitacion.getRutCliente()%></td>
+                          <td><%=listCapacitacion.getDia()%></td>
+                          <td><%=listCapacitacion.getHora()%></td>
+                          <td><%=listCapacitacion.getLugar()%></td>
+                          <td><%=listCapacitacion.getDuracion()%></td>
+                          <td><%=listCapacitacion.getCantAsistentes()%></td>
+                      </tr>
+                  <%}%>
+
 		  </tbody>
 		</table>    
 			    

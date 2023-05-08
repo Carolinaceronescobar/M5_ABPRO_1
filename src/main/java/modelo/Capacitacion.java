@@ -8,7 +8,7 @@ public class Capacitacion {
     private String lugar;
     private int duracion;
     private int cantAsistentes;
-    Capacitacion(){}
+    public Capacitacion(){}
     public Capacitacion(int id, int rutCliente, String dia, String hora, String lugar, int duracion, int cantAsistentes){
         this.id = id;
         this.rutCliente = rutCliente;
