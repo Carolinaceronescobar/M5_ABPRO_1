@@ -1,6 +1,8 @@
 package controlador;
+
 import implementacion.LoginServiceImpl;
-import interfaces.*;
+
+import implementacion.LoginImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,65 +18,103 @@ import java.sql.*;
 import java.util.Optional;
 
 public class LoginServlet extends HttpServlet {
-    private Connection conexion;
+
+    final static String USERNAME = "admin";
+    final static String PASSWORD = "1234";
+    private ConexionBD conexionBD;
 
     @Override
     public void init() throws ServletException {
         super.init();
-        // Establecer la conexión a la base de datos en el método init()
-        String url = "jdbc:mysql://localhost:3306/sprint_m5";
-        String usuario = "usuario";
-        String contrasena = "contrasena";
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            conexion = DriverManager.getConnection(url, usuario, contrasena);
+            // Obtenemos la instancia de la conexión a través del patrón Singleton
+            conexionBD = ConexionBD.obtenerInstancia();
+        } catch (SQLException e) {
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        try {
+            // Cerramos la conexión al destruir el servlet
+            ConexionBD.closeConnection();
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
+
+
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        LoginInterface auth = new LoginServiceImpl();
+        LoginServiceImpl auth = new LoginServiceImpl();
         Optional<String> usernameOptional = auth.getUsername(req);
 
         if (usernameOptional.isPresent()) {
-            resp.setContentType("text/html;charset=UTF-8");
-            try (PrintWriter out = resp.getWriter()) {
-
-                out.println("<!DOCTYPE html>");
-                out.println("<html>");
-                out.println("    <head>");
-                out.println("        <meta charset=\"UTF-8\">");
-                out.println("        <title>Hola " + usernameOptional.get() + "</title>");
-                out.println("    </head>");
-                out.println("    <body>");
-                out.println("        <h1>Hola " + usernameOptional.get() + " ya has iniciado sesión con éxito!</h1>");
-                out.println("        <p><a href='" + req.getContextPath() + "/index.html'>Volver</a></p>");
-                out.println("        <p><a href='" + req.getContextPath() + "/logout'>Logout</a></p>");
-                out.println("    </body>");
-                out.println("</html>");
-            }
+            getServletContext().getRequestDispatcher("/").forward(req, resp);
         } else {
-            getServletContext().getRequestDispatcher("/loginServlet").forward(req, resp);
+
+            RequestDispatcher dispatcher = req.getRequestDispatcher("login.jsp");
+            dispatcher.forward(req, resp);
+        }
+    }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("usuario");
+        String password = req.getParameter("contrasena");
+
+        try {
+            // Creamos la consulta para obtener el usuario y la contraseña
+
+            String query = "SELECT * FROM usuarios WHERE usuario = ? AND contrasena = ?";
+            PreparedStatement stmt = conexionBD.getConnection().prepareStatement(query);
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+
+            System.out.println(stmt);
+            // Ejecutamos la consulta
+            ResultSet rs = stmt.executeQuery();
+            System.out.println(rs);
+            if (rs.next()) {
+                // Si se encontró un usuario con el username y la contraseña
+                HttpSession session = req.getSession();
+                session.setAttribute("username", username);
+                resp.sendRedirect(req.getContextPath() + "/loginServlet");
+            } else {
+                // Si no se encontró un usuario con el username y la contraseña
+                resp.sendRedirect(req.getContextPath() + "/login.jsp?error=1");
+            }
+
+            // Cerramos la conexión
+            rs.close();
+            stmt.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+            resp.sendRedirect(req.getContextPath() + "/login.jsp?error=2");
         }
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String username = req.getParameter("username");
-        String password = req.getParameter("password");
 
-        if (username.equals(username) && password.equals(password)) {
+/*    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String username = req.getParameter("usuario");
+        String password = req.getParameter("contrasena");
+
+        if (this.USERNAME.equals(username) && this.PASSWORD.equals(password)) {
+            System.out.println("ENTRE");
 
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
 
-            resp.sendRedirect(req.getContextPath() + "/login");
+            resp.sendRedirect(req.getContextPath() + "/loginServlet");
         } else {
-            resp.sendRedirect(req.getContextPath() + "/login");
+            System.out.println("NO ENTRE");
+            resp.sendRedirect(req.getContextPath() + "/loginServlet");
             //resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Lo sentimos no esta autorizado para ingresar a esta pagina!");
 }
+}*/
 }
-        }

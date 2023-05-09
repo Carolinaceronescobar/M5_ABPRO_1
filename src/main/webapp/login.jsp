@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Inicio de sesión</h1>
-    <form action="login" method="post">
+    <form action="loginServlet" method="post">
         <label for="usuario">Nombre de usuario:</label>
         <input type="text" id="usuario" name="usuario"><br><br>
         <label for="contrasena">Contrasena:</label>
