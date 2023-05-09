@@ -22,10 +22,10 @@ List<Capacitacion> capacitaciones = (List<Capacitacion>)request.getAttribute("ca
 		  <thead>
 		    <tr>
 		      <th>Rut del cliente</th>
-		      <th>Día</th>
+		      <th>D&iacute;a</th>
 		      <th>Hora</th>
 		      <th>Lugar</th>
-		      <th>Duración</th>
+		      <th>Duraci&oacute;n</th>
 		      <th>Cantidad Asistentes</th>
 		    </tr>
 		  </thead>		

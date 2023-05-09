@@ -48,22 +48,21 @@ public class CapacitacionImpl implements CapacitacionInterface {
     }*/
 
     public List<Capacitacion> listarCapacitaciones_nuevo() {
-        List<Capacitacion> capacitaciones = new ArrayList<>();
+        List<Capacitacion> listaCapacitaciones = new ArrayList<>();
         Connection conn = null;
         PreparedStatement ps =null;
         ResultSet rs =null;
         try {
             conn = DatabaseConnection.getConnection();
-            ps= conn.prepareStatement("SELECT * FROM capacitaciones");
+            ps= conn.prepareStatement("SELECT * FROM capacitacion");
             rs= ps.executeQuery();
 
             while (rs.next()){
                 Capacitacion capacitacion = getCapacitacion(rs);
-
-                capacitaciones.add(capacitacion);
+                listaCapacitaciones.add(capacitacion);
             }
         } catch (SQLException e){
-System.out.println("hola");
+                System.out.println("hola");
         } finally {
             try {
                 if (rs!=null) rs.close();
@@ -74,17 +73,18 @@ System.out.println("hola");
 
             }
         }
-        return capacitaciones;
+        return listaCapacitaciones;
     }
     private static Capacitacion getCapacitacion(ResultSet resultSet) throws SQLException {
         Capacitacion capacitacion = new Capacitacion();
-        capacitacion.setId(resultSet.getInt("id"));
-        capacitacion.setRutCliente(resultSet.getInt("rut_cliente"));
-        capacitacion.setDia(resultSet.getString("dia"));
+        capacitacion.setId(resultSet.getInt("idCapacitacion"));
+        capacitacion.setRutCliente(resultSet.getInt("Cliente_rutCliente"));
+        capacitacion.setDia(resultSet.getString("fecha"));
         capacitacion.setHora(resultSet.getString("hora"));
         capacitacion.setLugar(resultSet.getString("lugar"));
         capacitacion.setDuracion(resultSet.getInt("duracion"));
-        capacitacion.setCantAsistentes(resultSet.getInt("cantidad"));
+        capacitacion.setCantAsistentes(resultSet.getInt("cantidadAsistentes"));
+
         return capacitacion;
     }
 }
