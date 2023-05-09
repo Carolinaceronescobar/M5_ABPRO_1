@@ -1,7 +1,7 @@
 	<footer>
 		<!-- aca el footer que contiene la informacion de contactos ,integrantes y fecha.  -->
-		<br>Carolina Cerón Escobar | Loreto Galvez | César Mongez | Heinz Beckers <br> Proyecto Cachureando |
-		Enero-2023
+		<br>Carolina Cerón Escobar | Loreto Galvez | César Mongez | Heinz Beckers <br> Proyecto Sprint Modulo 5 |
+		Mayo-2023
 	</footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

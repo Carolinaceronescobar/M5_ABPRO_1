@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
                 out.println("</html>");
             }
         } else {
-            getServletContext().getRequestDispatcher("/loginservlet").forward(req, resp);
+            getServletContext().getRequestDispatcher("/loginServlet").forward(req, resp);
         }
     }
 
@@ -77,4 +77,4 @@ public class LoginServlet extends HttpServlet {
             //resp.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Lo sentimos no esta autorizado para ingresar a esta pagina!");
 }
 }
-}
+        }

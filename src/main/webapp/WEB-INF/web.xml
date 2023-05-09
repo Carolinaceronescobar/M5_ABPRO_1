@@ -66,4 +66,15 @@
         <servlet-name>ListarCapacitaciones</servlet-name>
         <url-pattern>/listarCapac</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <description></description>
+        <display-name>controlador.LoginServlet</display-name>
+        <servlet-name>controlador.LoginServlet</servlet-name>
+        <servlet-class>controlador.LoginServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>controlador.LoginServlet</servlet-name>
+        <url-pattern>/loginServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
