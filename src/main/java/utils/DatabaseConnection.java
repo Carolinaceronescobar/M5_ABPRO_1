@@ -5,12 +5,21 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DatabaseConnection {
-    private static String URL = "jbdc:mysql://localhost:3306/javaweb?serverTimezone=America/Santiago";
+    private static String URL = "jbdc:mysql://localhost:3306/javaweb";
     private static String USERNAME = "root";
     private static String PASSWORD = "";
 
     public static Connection getConnection() throws SQLException {
-        //return DriverManager.getConnection(url, username, password);
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/javaweb?serverTimezone=America/Santiago", "root", "");
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+
+        }
+
+        Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        System.out.println("hola");
+        return conn;
+        //return DriverManager.getConnection("jdbc:mysql://localhost:3306/javaweb?serverTimezone=America/Santiago", "root", "");
     }
 }

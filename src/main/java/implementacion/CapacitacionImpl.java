@@ -2,6 +2,13 @@ package implementacion;
 import modelo.Capacitacion;
 
 import interfaces.CapacitacionInterface;
+import utils.DatabaseConnection;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 public class CapacitacionImpl implements CapacitacionInterface {
@@ -39,4 +46,45 @@ public class CapacitacionImpl implements CapacitacionInterface {
             }
         }
     }*/
+
+    public List<Capacitacion> listarCapacitaciones_nuevo() {
+        List<Capacitacion> listaCapacitaciones = new ArrayList<>();
+        Connection conn = null;
+        PreparedStatement ps =null;
+        ResultSet rs =null;
+        try {
+            conn = DatabaseConnection.getConnection();
+            ps= conn.prepareStatement("SELECT * FROM capacitacion");
+            rs= ps.executeQuery();
+
+            while (rs.next()){
+                Capacitacion capacitacion = getCapacitacion(rs);
+                listaCapacitaciones.add(capacitacion);
+            }
+        } catch (SQLException e){
+                System.out.println("hola");
+        } finally {
+            try {
+                if (rs!=null) rs.close();
+                if (ps!=null) ps.close();
+                if (conn!=null) conn.close();
+
+            } catch (SQLException e) {
+
+            }
+        }
+        return listaCapacitaciones;
+    }
+    private static Capacitacion getCapacitacion(ResultSet resultSet) throws SQLException {
+        Capacitacion capacitacion = new Capacitacion();
+        capacitacion.setId(resultSet.getInt("idCapacitacion"));
+        capacitacion.setRutCliente(resultSet.getInt("Cliente_rutCliente"));
+        capacitacion.setDia(resultSet.getString("fecha"));
+        capacitacion.setHora(resultSet.getString("hora"));
+        capacitacion.setLugar(resultSet.getString("lugar"));
+        capacitacion.setDuracion(resultSet.getInt("duracion"));
+        capacitacion.setCantAsistentes(resultSet.getInt("cantidadAsistentes"));
+
+        return capacitacion;
+    }
 }
