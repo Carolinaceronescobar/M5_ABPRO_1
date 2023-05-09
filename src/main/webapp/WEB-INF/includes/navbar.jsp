@@ -17,12 +17,24 @@
               <a class="nav-link" href="contactoServlet">Contacto</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="crearCapacitacionServlet">Crear capacitacion</a>
+              <a class="nav-link" href="crearUsuarioServlet">Crear usuario</a>
             </li>
             <li class="nav-item">
-                          <a class="nav-link" href="crearUsuarioServlet">Crear usuario</a>
-                        </li>
-
+              <a class="nav-link" href="crearCapacitacionServlet">Crear Capacitacion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="listarCapac">Listar Capacitacion</a>
+            </li>
+            <!--
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Capacitacion</a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="crearCapacitacionServlet">Crear</a>
+                    <a class="dropdown-item" href="listarCapac">Listar</a>
+                </div>
+            </li>
+            -->
           </ul>
         </div>
       </div>
